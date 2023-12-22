@@ -38,6 +38,8 @@ You can go to *insert website here and link* to sign up and create your own cale
 
 ## Labor
 
+Project board: https://github.com/users/ajabadi/projects/6
+
 Jose: Calorie and Fitness tracker component (Front-end and Backend)
 
 Sven: Weather component (Front-end and Backend)
