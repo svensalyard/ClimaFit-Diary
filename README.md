@@ -12,7 +12,7 @@ I WANT to keep track of schedule, my work-outs, and my diet.
 
 SO THAT I can better take care of myself, my mental health, and keep my time management on track.
 
-## Installation
+## Dependencies
 
 - Sequelize
 - Day.js
