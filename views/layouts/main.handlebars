@@ -2,36 +2,39 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Im a boilerplate</title>
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima-Fit Diary</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
-  <div >
-    <header>
-      <nav>
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="title">Clima-Fit Diary</div>
+            <div class="login-signup">
+                <a href="/login">Log In</a> / 
+                <a href="/signup">Sign up</a>
+            </div>
+        </header>
+        <main class="main-content">
+            <section class="intro">
+                <h1>Welcome to Clima-Fit Diary</h1>
+                <p>This is your one stop to check your calendar and so much more:</p>
+            </section>
+            <section class="features">
+                <!-- Feature list -->
+            </section>
+        </main>
+        <footer class="footer">
+            Clima-Fit Diary Copyright
+        </footer>
+    </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
