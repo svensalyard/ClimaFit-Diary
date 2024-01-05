@@ -1,1 +1,49 @@
-/* style me */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body, html {
+    height: 100%;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+ 
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid grey;
+}
+

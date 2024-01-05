@@ -4,9 +4,21 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+require('dotenv').config();
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
+  dialect: 'mysql'
+  // ... other options
+});
+
+
+module.exports = sequelize;
 
 const app = express();
 const PORT = process.env.PORT || 3001;
