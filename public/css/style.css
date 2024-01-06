@@ -2,13 +2,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
 }
 
 body, html {
     height: 100%;
     font-family: sans-serif;
-    background-color: black;
+    margin: 0; 
+}
+
+.title{
+    text-align: center;
+    size: 30px;
 }
 
 .wrapper {
@@ -22,28 +26,162 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border-bottom: 1px solid grey;
+    border: 1px solid grey; 
+    border-radius: 10px; 
+    margin: 5px;
+   
 }
 
+
+/* Input group text and icons */
+#modalLoginForm .input-group-text, #modalRegisterForm .input-group-text{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+/* Input fields */
+#modalLoginForm .form-control,#modalRegisterForm .form-control {
+    border: none;
+    border-radius: 0; 
+    border-bottom: 1px solid #ced4da; 
+    box-shadow: none; 
+}
+
+/* Adjusting the label position */
+#modalLoginForm .md-form label, #modalRegisterForm .md-form label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: color .2s, transform .2s;
+    background-color: transparent;
+    padding: 0 0.5rem;
+    margin-left: 2.5rem; 
+    pointer-events: none;
+}
+
+
+#modalLoginForm .form-control:focus + label,
+#modalLoginForm .form-control:not(:placeholder-shown) + label,#modalRegisterForm .form-control:focus + label,
+#modalRegisterForm .form-control:not(:placeholder-shown) + label {
+    transform: translateY(-100%);
+    font-size: 0.8rem;
+    color: #80bdff;
+}
+
+/* Hide the border when input is focused */
+#modalLoginForm .form-control:focus,#modalRegisterForm .form-control:focus {
+    border-bottom: 1px solid #80bdff;
+}
+
+/* Ensure icons are appropriately colored and sized */
+#modalLoginForm .fas,#modalRegisterForm .fas {
+    color: #757575; 
+    min-width: 2rem; 
+    text-align: center;
+}
+
+/* Removes input group border */
+#modalLoginForm .input-group-prepend .input-group-text,#modalRegisterForm .input-group-prepend .input-group-text {
+    border: none;
+}
+
+/* Remove input field box shadow on focus */
+#modalLoginForm .form-control:focus, #modalRegisterForm .form-control:focus {
+    box-shadow: none;
+}
+
+#modalLoginForm .modal-footer {
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+  justify-content: center; /* Center the button */
+}
+
+#modalLoginForm .modal-footer .btn,#modalRegisterForm .modal-footer .btn {
+  width: 100%; 
+  border-radius: 0.25rem;
+  background-color: #17a2b8; 
+  color: white;
+}
+
+#modalLoginForm .modal-footer .btn:hover,#modalRegisterForm .modal-footer .btn:hover {
+  background-color: #138496;
+}
+
+
 .main-content {
+    display: flex;
     flex: 1;
     padding: 20px;
+    height: 100%; 
+    
+}
+
+.container-flex {
+    display: flex;
+    flex: 1; 
+    flex-direction: row; 
+}
+
+.intro, .features {
+    border: 1px solid grey; 
+    padding: 20px;
+    border-radius: 10px; 
+    margin: 5px;
+    
 }
 
 .intro {
-    margin-bottom: 20px;
+    flex: 5; 
+   
 }
 
 .features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
- 
+   flex: 1;
+    justify-content: space-around; 
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin: 15px;
+  }
+
+  .features a.feature-item {
+    text-decoration: none; 
+    color: inherit;      
 }
+
+.features a.feature-item:hover {
+    text-decoration: none; 
+    color: blue; 
+}
+
+  
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .intro, .features {
+        min-width: auto;
+        max-width: 100%;
+    }
+}
+
 
 .footer {
     text-align: center;
-    padding: 10px;
-    border-top: 1px solid grey;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid grey; 
+    border-radius: 10px; 
+    margin:10px;
 }
 
