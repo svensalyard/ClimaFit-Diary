@@ -1,18 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { OpenAIApi, Configuration } = require('openai');
+const openai = require('openai');
 
-const configuration = new Configuration({
+const openaiApi = new openai.OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
 router.post('/ask', async (req, res) => {
   try {
-    const response = await openai.createCompletion({
+    const response = await openaiApi.createCompletion({
       model: "gpt-3.5-turbo",
       prompt: req.body.question,
-      max_tokens: 300,
+      max_tokens: 150,
     });
     res.json({ answer: response.data.choices[0].text.trim() });
   } catch (error) {
