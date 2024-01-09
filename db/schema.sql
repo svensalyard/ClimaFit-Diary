@@ -1,2 +1,3 @@
-DROP DATABASE IF EXISTS clima_fit;
-CREATE DATABASE clima_fit;
+DROP DATABASE IF EXISTS climafit_db;
+CREATE DATABASE climafit_db;
+>>>>>>> 55acf7f8661727f4cfe45f38a9d670f2b722ef3e
