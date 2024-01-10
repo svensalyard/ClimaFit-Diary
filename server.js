@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const userRoutes = require('./controllers/api/userRoutes');
 const helpers = require('./utils/helpers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -22,33 +23,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: path.join(__dirname, 'views/partials'), 
+  helpers
+});
 
-const sess = {
-  // Signs the session
+// Sessions setup
+app.use(session({
   secret: 'Super secret secret',
-  // This IS essentially the session
-  cookie: {
-    // when the cookie will expire (in ms)
-    maxAge: 300000,
-    // prevents access through JS in the client
-    httpOnly: true,
-    // Server and Client will reject if not served from HTTPS
-    secure: false,
-    // Only sites on the same domain can use this cookie
-    sameSite: 'strict',
-  },
-  // forces the session to be saved even if nothing changed
+  cookie: { maxAge: 300000, httpOnly: true, secure: false, sameSite: 'strict' },
   resave: false,
-  // forces a session to be saved when it is new regardless of if anything has changed
   saveUninitialized: true,
-  // where to store the session on the server
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+  store: new SequelizeStore({ db: sequelize })
+}));
 
-app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
@@ -57,9 +47,19 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api/users', userRoutes);
+
+app.get('/', (req, res) => {
+  res.render('layouts/main', { logged_in: req.session.logged_in });
+});
 
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
+})
+
+.catch(err => {
+  console.error('Unable to connect to the database:', err);
 });
+
