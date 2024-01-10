@@ -15,15 +15,15 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       const data = await response.json();
-  window.location.href = data.redirect;
-
-  } else {
-      const data = await response.json();
-      const errorMessageElement = document.querySelector('#errorMessage');
-      errorMessageElement.textContent = data.message;
-      $('#errorModal').modal('show'); // Show the modal using jQuery
+      window.location.href = data.redirect;
+    } else {
+      const errorData = await response.json();
+      const errorMessage = errorData.message || 'Login failed. Please try again.';
+      $('#errorMessage').text(errorMessage);
+      $('#errorModal').modal('show');
+    }
+  
   }
-}
 };
 
 document.querySelector('#modalLoginForm').addEventListener('submit', loginFormHandler);

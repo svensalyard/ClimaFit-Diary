@@ -19,7 +19,13 @@ async function signupFormHandler(event) {
         if (response.ok) {
             window.location.href = '/'; // Redirect to the root route
         } else {
-            alert(response.statusText);
+            // Retrieve error message from response body
+            const errorData = await response.json();
+            const errorMessage = errorData.message || 'Password must be 8 digits. Please try again.';
+            
+            // Display error message using modal
+            $('#errorMessage').text(errorMessage);
+            $('#errorModal').modal('show');
         }
     }
 }
