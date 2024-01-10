@@ -1,0 +1,11 @@
+<header class="header">
+    <div class="title">Clima-Fit Diary</div>
+    <div class="login-signup">
+        {{#if logged_in}}
+            <button class="btn btn-primary" id="logoutButton">Logout</button>
+        {{else}}
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalLoginForm">Log In</button>
+            <button class="btn btn-secondary" data-toggle="modal" data-target="#modalRegisterForm">Sign up</button>
+        {{/if}}
+    </div>
+</header>

@@ -14,40 +14,17 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      const data = await response.json();
+      window.location.href = data.redirect;
     } else {
-      alert(response.statusText);
+      const errorData = await response.json();
+      const errorMessage = errorData.message || 'Login failed. Please try again.';
+      $('#errorMessage').text(errorMessage);
+      $('#errorModal').modal('show');
     }
+  
   }
 };
 
-const signupFormHandler = async (event) => {
-  event.preventDefault();
+document.querySelector('#modalLoginForm').addEventListener('submit', loginFormHandler);
 
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-
-  if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
-    }
-  }
-};
-
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
