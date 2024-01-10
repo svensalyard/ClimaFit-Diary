@@ -8,6 +8,24 @@ body, html {
     height: 100%;
     font-family: sans-serif;
     margin: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: url('/images/Free-Nature-Backgrounds-Sunset-by-Pixabay.jpg') center/cover fixed;
+}
+.container-flex {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+@media only screen and (max-width: 600px) {
+    .container-flex {
+        padding: 10px;
+    }
 }
 
 .title{
@@ -29,6 +47,7 @@ body, html {
     border: 1px solid grey; 
     border-radius: 10px; 
     margin: 5px;
+    background-color: #fffefb;
    
 }
 
