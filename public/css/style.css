@@ -8,12 +8,12 @@ body, html {
     height: 100%;
     font-family: sans-serif;
     margin: 0; 
-    background-color: #344548;
+    background-color: #013328;
 }
 
 .title{
     text-align: center;
-    size: 30px;
+    size: 20px;
 }
 
 .wrapper {
@@ -30,7 +30,7 @@ body, html {
     border: 1px solid grey; 
     border-radius: 10px; 
     margin: 5px;
-    background-color: #FFBB98;
+    background-color: #69451a;
    
 }
 
@@ -132,6 +132,7 @@ body, html {
     padding: 20px;
     border-radius: 10px; 
     margin: 5px;
+    background-color: #e3dcd2;
     
 }
 
@@ -145,7 +146,7 @@ body, html {
     justify-content: space-around; 
     align-items: center; 
     text-align: center; 
-    background-color: #FFBB98;
+    background-color: #e3dcd2;
   }
 
   .feature-item {
@@ -185,8 +186,8 @@ body, html {
     padding: 20px;
     border: 1px solid rgb(0, 0, 0); 
     border-radius: 10px; 
-    margin:10px;
-    background-color: #7D8E95;
+    margin: 20px;
+    background-color: #cc8b65;
 }
 
 /* openai modal */

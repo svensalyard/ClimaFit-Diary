@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
-<body>
+<body class="bg-image">
     <div class="wrapper">
          {{> navbar}} 
         <main class="main-content">
@@ -64,12 +64,12 @@
                 {{else}}
         <section class="intro">
             <h1>Welcome to Clima-Fit Diary</h1>
-            <p>ClimaFit is a calendar app to track any reminders, events, or meetings.Our application is a seamless integration of essential daily functionalities, uniquely combining a daily scheduler, weather report, comprehensive calorie counter, workout tracker, and chat-gpt message box all within a single, user-friendly website. With our site, AI is at your fingertips. This innovative approach eliminates the need for multiple applications, streamlining your day-to-day tasks into one efficient, easy-to-navigate platform. We are committed to simplifying your life by amalgamating these key features, providing a harmonious balance of convenience and functionality, tailored to enhance your daily routine and overall well-being.Never miss a work-out or be late to a meeting when you have ClimaFit.</p>
+            <p>ClimaFit is a calendar app to track any reminders, events, or meetings. Our application is a seamless integration of essential daily functionalities, uniquely combining a daily scheduler, weather report, comprehensive calorie counter, workout tracker, and chat-gpt message box all within a single, user-friendly website. With our site, AI is at your fingertips. This innovative approach eliminates the need for multiple applications, streamlining your day-to-day tasks into one efficient, easy-to-navigate platform. We are committed to simplifying your life by amalgamating these key features, providing a harmonious balance of convenience and functionality, tailored to enhance your daily routine and overall well-being.Never miss a work-out or be late to a meeting when you have ClimaFit.</p>
         </section>
   <section class="features">
   <div class="feature-item">
     <i class="fas fa-calendar-alt fa-3x"></i>
-    <p>Google Calendar Integration</p>
+    <p>Calendar Integration</p>
   </div>
   <div class="feature-item">
     <i class="fas fa-sun fa-3x"></i>
@@ -198,10 +198,12 @@
   </div>
 </div>
 
+{{> openaiModal }}
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <script src="/js/openaiModal.js"></script>
       <script src="/js/calorietracker.js"></script>
       <script src="/js/workoutHandler.js"></script>
       <script src="/js/login.js"></script>
