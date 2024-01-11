@@ -20,8 +20,29 @@
                    
                     <!-- Content for logged-in users -->
                     <section class="scheduler">
-    <h2>Workout Schedule</h2>
-    <!-- Add Scheduler UI here -->
+      <h2>Workout Schedule</h2>
+        <!-- Form for Adding/Editing Workouts -->
+        <form id="workoutForm">
+            <div class="mb-3">
+                <label for="workoutType" class="form-label">Workout Type</label>
+                <input type="text" class="form-control" id="workoutType" required>
+            </div>
+            <div class="mb-3">
+                <label for="workoutDate" class="form-label">Date</label>
+                <input type="date" class="form-control" id="workoutDate" required>
+            </div>
+            <div class="mb-3">
+                <label for="workoutDuration" class="form-label">Duration (in minutes)</label>
+                <input type="number" class="form-control" id="workoutDuration" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Workout</button>
+        </form>
+
+        <!-- Workout List -->
+        <div id="workoutList" class="mt-4">
+            <!-- Workouts will be added here dynamically -->
+        </div>
+    </div>
 </section>
 
 <!-- Calorie Tracker Section -->
@@ -182,6 +203,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
       <script src="/js/calorietracker.js"></script>
+      <script src="/js/workout.js"></script>
       <script src="/js/login.js"></script>
       <script src="/js/signup.js"></script>
     {{#if logged_in}}

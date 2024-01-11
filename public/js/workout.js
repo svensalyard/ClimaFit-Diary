@@ -1,19 +1,30 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../../connection');
 
 class Workout extends Model {}
 
 Workout.init(
   {
-    // Define schema
-    date: DataTypes.DATE,
-    type: DataTypes.STRING,
-    duration: DataTypes.INTEGER,
-    // ... other fields
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    duration: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+   
   },
   {
     sequelize,
-    // ... other options
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'workout',
   }
 );
 
