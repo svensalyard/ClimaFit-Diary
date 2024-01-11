@@ -19,10 +19,14 @@ async function signupFormHandler(event) {
         if (response.ok) {
             window.location.href = '/'; // Redirect to the root route
         } else {
-            // Retrieve error message from response body
             const errorData = await response.json();
-            const errorMessage = errorData.message || 'An error occured please try again.';
-            
+            let errorMessage = errorData.message;
+
+            if (errorMessage && typeof errorMessage === 'string' && errorMessage.toLowerCase().includes('password length')) {
+                errorMessage = 'Password must be at least 8 characters long.';
+            } else {
+                errorMessage = errorMessage || 'An error occurred. Please try again.';
+            }
             // Display error message using modal
             $('#errorMessage').text(errorMessage);
             $('#errorModal').modal('show');
