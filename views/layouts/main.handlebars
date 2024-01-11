@@ -21,7 +21,7 @@
                     <!-- Content for logged-in users -->
                     <section class="scheduler">
       <h2>Workout Schedule</h2>
-        <!-- Form for Adding/Editing Workouts -->
+       
         <form id="workoutForm">
             <div class="mb-3">
                 <label for="workoutType" class="form-label">Workout Type</label>
@@ -40,7 +40,7 @@
 
         <!-- Workout List -->
         <div id="workoutList" class="mt-4">
-            <!-- Workouts will be added here dynamically -->
+           
         </div>
     </div>
 </section>
@@ -49,7 +49,7 @@
 <section class="calorie-tracker">
     <h2>Calorie Tracker</h2>
     <input type="text" id="foodInput" placeholder="Enter food item">
-    <button id="fetchCalories">Get Food</button>
+    <button id="fetchCalories">Search</button>
     <button id="calculateTotal">Add Food</button>
     <div id="calorieResults">
         <p>Calories: <span id="calories"></span></p>
@@ -203,7 +203,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
       <script src="/js/calorietracker.js"></script>
-      <script src="/js/workout.js"></script>
+      <script src="/js/workoutHandler.js"></script>
       <script src="/js/login.js"></script>
       <script src="/js/signup.js"></script>
     {{#if logged_in}}

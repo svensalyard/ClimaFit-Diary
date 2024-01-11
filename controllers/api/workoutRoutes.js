@@ -5,10 +5,11 @@ const { Workout } = require('../../models');
 // GET route to fetch all workouts
 router.get('/', async (req, res) => {
     try {
-        const workouts = await Workout.findAll();
-        res.json(workouts);
+        // Temporarily return a static response
+        res.json({ message: "Route working, but database query not executed" });
     } catch (err) {
-        res.status(500).json(err);
+        console.error('Failed to fetch workouts:', err);
+        res.status(500).json({ message: 'Internal server error', error: err.toString() });
     }
 });
 
@@ -18,7 +19,8 @@ router.post('/', async (req, res) => {
         const newWorkout = await Workout.create(req.body);
         res.status(201).json(newWorkout);
     } catch (err) {
-        res.status(400).json(err);
+        console.error('Error adding workout:', err);
+        res.status(400).json({ message: 'Error adding workout' });
     }
 });
 
