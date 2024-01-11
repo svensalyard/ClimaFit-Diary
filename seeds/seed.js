@@ -4,10 +4,9 @@ const { User } = require('../models');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
- /** 
-  * DO SEEDS HERE
-  */
-
+  await User.bulkCreate(userData, {
+    individualHooks: true,
+  });
   process.exit(0);
 };
 
