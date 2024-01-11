@@ -19,8 +19,10 @@ function loadWorkouts() {
         return response.json();
     })
     .then(workouts => {
+        console.log('Workout List Element:', document.getElementById('workoutList'));
         const workoutList = document.getElementById('workoutList');
-        workoutList.innerHTML = '';
+        if (workoutList) {
+            workoutList.innerHTML = '';
 
         if (workouts.length === 0) {
             const noWorkoutElement = document.createElement('div');
@@ -57,9 +59,12 @@ function loadWorkouts() {
 
                 workoutList.appendChild(workoutElement);
             });
+
         }
-    })
-    
+
+        }
+      })
+      
     .catch(error => {
         console.error('Error loading workouts:', error);
     });
