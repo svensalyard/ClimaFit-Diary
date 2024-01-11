@@ -197,3 +197,82 @@ body, html {
     right: 20px;
     z-index: 100;
 }
+
+.content-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: .25rem;
+    margin: 1rem; 
+    padding: 20px;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+
+#fetchCalories, #calculateTotal{
+margin-top: 10px;
+border-radius: .25rem;
+}
+
+#calorieResults {
+    margin-top: 10px;
+}
+
+
+#foodInput {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.scheduler-container, .calorie-tracker {
+    border: 1px solid black; 
+    border-radius: .25rem; 
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+.scheduler-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.workout-form-container, .workout-list-container {
+    flex: 1;
+    margin-right: 10px; 
+}
+
+.workout-form-container {
+    margin-bottom: 10px; 
+}
+
+.edit-form-container {
+    margin-top: 20px;
+}
+
+.workout-item {
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-left: 50px;
+}
+
+.workout-item label {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.workout-checkbox {
+    margin-right: 10px;
+}
+
+span {
+    flex-grow: 1;
+}

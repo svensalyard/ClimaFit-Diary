@@ -90,8 +90,8 @@ $(document).ready(function() {
 
     function updateRecentEntriesDisplay() {
         var entriesHtml = recentEntries.map((entry, index) => 
-            `<li>${entry.query}: ${entry.totalCalories.toFixed(2)} calories 
-             <button onclick="removeEntry(${index})">Cancel</button></li>`
+            `<li><strong>${entry.query}: ${entry.totalCalories.toFixed(2)} calories 
+             <button onclick="removeEntry(${index})">Remove</button></li>`
         ).join('');
         $('#recentEntries').html(entriesHtml);
     }
