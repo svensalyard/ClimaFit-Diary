@@ -9,8 +9,9 @@ WorkoutData.init(
       type: { type: DataTypes.STRING, allowNull: false },
       duration: { type: DataTypes.INTEGER, allowNull: false },
       userId: { 
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER, 
         references: { model: 'user', key: 'id' },
+        field: 'userId', 
       },
     },
     {
@@ -18,7 +19,8 @@ WorkoutData.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'workoutdata', 
+      modelName: 'WorkoutData', 
+      tableName: 'workouts', 
     }
   );
 
