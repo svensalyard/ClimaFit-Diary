@@ -8,6 +8,7 @@ const userRoutes = require('./controllers/api/userRoutes');
 const helpers = require('./utils/helpers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const calorieRoutes = require('./controllers/api/calorieroutes');
+const workoutRoutes = require('./controllers/api/workoutRoutes');
 
 const Sequelize = require('sequelize');
 
@@ -56,6 +57,7 @@ app.get('/', (req, res) => {
 
 app.use(routes);
 app.use('/api/calories', calorieRoutes);
+app.use('/api/workouts', workoutRoutes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
