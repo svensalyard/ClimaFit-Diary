@@ -10,36 +10,6 @@ $(document).ready(function() {
         });
     }
 
-    // Check if the user is logged in before fetching saved calorie data
-    checkIfUserLoggedIn().then(response => {
-        if (response.loggedIn) {
-            fetchSavedCalorieData(); // User is logged in, proceed to fetch saved data
-        } else {
-            console.log("User is not logged in.");
-            // Handle the scenario when user is not logged in
-        }
-    });
-    
-    // Fetch saved calorie data when the page load
-    $('#fetchCalories').click(function() {
-        var query = $('#foodInput').val();
-        if (query) {
-            fetchCalorieData(query);
-        } else {
-            alert('Please enter a food item');
-        }
-    });
-
-    $('#calculateTotal').click(function() {
-        if (lastSearchedItem) {
-            cumulativeCalories += lastSearchedItem.totalCalories;
-            recentEntries.push(lastSearchedItem);
-            $('#totalCalories').text(`Total Calories: ${cumulativeCalories.toFixed(2)}`);
-            updateRecentEntriesDisplay();
-            lastSearchedItem = null; 
-        }
-    });
-
 
     function fetchSavedCalorieData() {
         $.ajax({
@@ -59,7 +29,7 @@ $(document).ready(function() {
         $.ajax({
             method: 'GET',
             url: 'https://api.calorieninjas.com/v1/nutrition?query=' + query,
-            headers: { 'X-Api-Key': 'Vjt4N7q3/sBL8sXQmWA7uw==C45rFsaEgvfzitJp'}, // Replace with your actual API key
+            headers: { 'X-Api-Key': 'Vjt4N7q3/sBL8sXQmWA7uw==C45rFsaEgvfzitJp'}, 
             contentType: 'application/json',
             success: function(result) {
                 if (result.items && result.items.length > 0) {
@@ -119,4 +89,36 @@ $(document).ready(function() {
             }
         });
     }
+
+    // Fetch saved calorie data when the page load
+    $('#fetchCalories').click(function() {
+    var query = $('#foodInput').val();
+    if (query) {
+        fetchCalorieData(query);
+    } else {
+        alert('Please enter a food item');
+    }
+});
+
+$('#calculateTotal').click(function() {
+    if (lastSearchedItem) {
+        cumulativeCalories += lastSearchedItem.totalCalories;
+        recentEntries.push(lastSearchedItem);
+        $('#totalCalories').text(`Total Calories: ${cumulativeCalories.toFixed(2)}`);
+        updateRecentEntriesDisplay();
+        saveCalorieData(lastSearchedItem.totalCalories); // Save the added calories
+        lastSearchedItem = null;
+    }
+});
+
+      // Check if the user is logged in before fetching saved calorie data
+      checkIfUserLoggedIn().then(response => {
+        if (response.loggedIn) {
+            fetchSavedCalorieData(); // User is logged in, proceed to fetch saved data
+        } else {
+            console.log("User is not logged in.");
+            // Handle the scenario when user is not logged in
+        }
+    });
+    
 });

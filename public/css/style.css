@@ -203,7 +203,7 @@ body, html {
     border: 1px solid black;
     border-radius: .25rem;
     margin: 1rem; 
-    padding: 20px;
+    padding: 16px;
 }
 
 .card-body {
@@ -219,7 +219,6 @@ border-radius: .25rem;
 #calorieResults {
     margin-top: 10px;
 }
-
 
 #foodInput {
     width: 100%; 
