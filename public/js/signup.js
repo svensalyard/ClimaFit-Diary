@@ -21,12 +21,15 @@ async function signupFormHandler(event) {
         } else {
             // Retrieve error message from response body
             const errorData = await response.json();
-            const errorMessage = errorData.message || 'Password must be 8 digits. Please try again.';
+            const errorMessage = errorData.message || 'An error occured please try again.';
             
             // Display error message using modal
             $('#errorMessage').text(errorMessage);
             $('#errorModal').modal('show');
         }
+    } else {
+        $('#errorMessage').text('Password must be 8 characters or more. Please try again.')
+        $('#errorModal').modal('show')
     }
 }
 
