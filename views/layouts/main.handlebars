@@ -20,7 +20,7 @@
                    
                     <!-- Content for logged-in users -->
           <div class="content-row"> 
-          <section class="scheduler card">
+          <section class="workout-scheduler card">
       <h2>Workout Schedule</h2>
           <div class="card-body">
         <div class="scheduler-container">
@@ -63,12 +63,12 @@
     <div class="card-body">
     <input type="text" id="foodInput" placeholder="Enter food item & amount">
     <button id="fetchCalories">Search</button>
-    <button id="calculateTotal">Add Food</button>
+    <button id="calculateTotal"><i class="fas fa-plus"></i>Add Food</button>
     <div id="calorieResults">
-        <p>Calories: <span id="calories"></span></p>
-        <p>Protein: <span id="protein"></span></p>
-        <p>Fat: <span id="fat"></span></p>
-        <p>Carbs: <span id="carbs"></span></p>
+        <p><i class="fas fa-fire-alt"></i> Calories: <span id="calories"></span></p>
+        <p><i class="fas fa-dumbbell"></i> Protein: <span id="protein"></span></p>
+        <p><i class="fas fa-drumstick-bite"></i> Fat: <span id="fat"></span></p>
+        <p><i class="fas fa-bread-slice"></i> Carbs: <span id="carbs"></span></p>
     </div>
      <div id="totalCalories">Total Calories: 0</div>
      <ul id="recentEntries"></ul>
