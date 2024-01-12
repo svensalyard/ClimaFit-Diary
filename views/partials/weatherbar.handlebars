@@ -1,0 +1,18 @@
+{{#if logged_in}}
+<div class="weathermain">
+    <div class="weatherbox">
+        <div class="nav justify-content-center align-items-center weatherbar">
+            <h3>Weather</h3>
+            <form class="weatherform">
+            <input id="weathersearch" type="text"><button type="submit" class="search-weather btn btn-primary">Submit</button>
+            </form>
+            <h4>Description</h4>
+            <p class="weathercard"></p>
+            <img src="" alt="weathericon" class="weathericon"> 
+            <h4>Temperature</h4>
+            <p class="temperature"></p>
+            <p>°F</p>
+        </div>
+    </div>
+</div>
+{{/if}}

@@ -295,3 +295,14 @@ border-radius: .25rem;
 span {
     flex-grow: 1;
 }
+
+.weatherbox {
+    background-color: #17a2b8;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.weatherbar * {
+    margin: 5px;
+}
