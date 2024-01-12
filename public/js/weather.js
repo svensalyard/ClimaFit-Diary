@@ -1,7 +1,3 @@
-// Could not get dotenv to function.....
-// const apiKey = {OPENWEATHER_API_KEY};
-const apiKey = '0237cfe82d42fa668919693e084185e5';
-
 // Elements
 var searchForm = document.querySelector('.weatherform');
 let weatherIcon = $(".weathericon");
@@ -10,13 +6,17 @@ const weatherButton = document.querySelector(".search-weather");
 
 // Event Listener for Form Submission
 weatherButton.addEventListener('click', async function (e) {
-    e.preventDefault();
-    var lat;
-    var lon; 
-    var temp;
-    var city = document.getElementById('weathersearch').value;
-    var locationurl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+
     try {
+        e.preventDefault();
+        var lat;
+        var lon; 
+        var temp;
+        var city = document.getElementById('weathersearch').value;
+        var response = await fetch("/api/weatherkey")
+        var apiKey = await response.json();
+        console.log(apiKey)
+        var locationurl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
       // Location Call
       // Api Call to get the location data from the city that is searched
         var response = await fetch(locationurl);
