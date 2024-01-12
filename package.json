@@ -21,7 +21,7 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "node-cron": "^3.0.3",
-    "openai": "^4.24.3",
+    "openai": "^4.24.4",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
