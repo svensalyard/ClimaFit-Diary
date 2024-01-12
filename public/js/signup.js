@@ -31,6 +31,9 @@ async function signupFormHandler(event) {
             $('#errorMessage').text(errorMessage);
             $('#errorModal').modal('show');
         }
+    } else {
+        $('#errorMessage').text('Password must be 8 characters or more. Please try again.')
+        $('#errorModal').modal('show')
     }
 }
 
