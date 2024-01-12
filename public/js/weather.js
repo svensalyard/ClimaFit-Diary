@@ -15,7 +15,6 @@ weatherButton.addEventListener('click', async function (e) {
         var city = document.getElementById('weathersearch').value;
         var response = await fetch("/api/weatherkey")
         var apiKey = await response.json();
-        console.log(apiKey)
         var locationurl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
       // Location Call
       // Api Call to get the location data from the city that is searched
