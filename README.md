@@ -27,14 +27,17 @@ SO THAT I can better take care of myself, my mental health, and keep my time man
 
 You can go to *insert website here and link* to sign up and create your own calendar today.
 
-*insert screenshot here*
+![IMG of Webpage](./images/climasc.png)
 
 ## CSS
 
-*framework goes here*
+We are using Bootstrap for the css framework.
 
 ## APIS
 
+- OPENAI
+- OpenWeatherMaps
+- CalorieNinjas
 
 ## Labor
 
@@ -44,9 +47,6 @@ Jose: Calorie and Fitness tracker component (Front-end and Backend)
 
 Sven: Weather component (Front-end and Backend)
 
-Alec: Not-decieded (TBA)
+Alec: CSS and Presentation component
 
-Lovepreet: Not-decided (TBA)
-
-
-## Walkthough Video
+Lovepreet: ChatGPT component
