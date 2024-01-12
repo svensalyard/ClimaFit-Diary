@@ -25,7 +25,7 @@ SO THAT I can better take care of myself, my mental health, and keep my time man
 
 ## Usage
 
-You can go to https://climafit-diary-015dae2ac9e5.herokuapp.com/ to sign up and create your own calendar today.
+You can go to https://climafit-diary2-892fe0b66cb5.herokuapp.com/ to sign up and create your own calendar today.
 
 ![IMG of Webpage](./images/climasc.png)
 
