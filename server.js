@@ -9,17 +9,7 @@ const helpers = require('./utils/helpers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const calorieRoutes = require('./controllers/api/calorieroutes');
 const workoutRoutes = require('./controllers/api/workoutRoutes');
-
-const Sequelize = require('sequelize');
-
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  dialect: 'mysql'
-  // ... other options
-});
-
-
-module.exports = sequelize;
+const sequelize = require("./config/connection");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
