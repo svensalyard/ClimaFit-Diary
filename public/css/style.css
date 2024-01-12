@@ -13,7 +13,8 @@ body, html {
 
 .title{
     text-align: center;
-    size: 20px;
+    font-size: 25px;
+    font-family: fantasy;
 }
 
 .wrapper {
@@ -27,7 +28,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border: 1px solid grey; 
+    border: 1px solid rgb(0, 0, 0); 
     border-radius: 10px; 
     margin: 5px;
     background-color: #69451a;
@@ -138,7 +139,23 @@ body, html {
 
 .intro {
     flex: 5; 
-   
+}
+.intro2{
+    font-family: fantasy;
+    text-indent: 60px; 
+    
+}
+.intro-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 60px;
+}
+.intro-text2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 60px;
 }
 
 .features {
@@ -147,6 +164,8 @@ body, html {
     align-items: center; 
     text-align: center; 
     background-color: #e3dcd2;
+    border: 1px solid #000;
+    border-radius: 10px;
   }
 
   .feature-item {
@@ -187,14 +206,14 @@ body, html {
     border: 1px solid rgb(0, 0, 0); 
     border-radius: 10px; 
     margin: 20px;
-    background-color: #cc8b65;
+    background-color: #69451a;
 }
 
 /* openai modal */
 #floatingButton {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 32px;
+    right: 30px;
     z-index: 100;
 }
 
